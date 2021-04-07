@@ -29,7 +29,7 @@ describe('Main-Page Testing', () => {
   })
   it('Should have inputs to make a reservation', () => {
     cy.get('form').get('input').should('have.length', 4)
-    cy.get('form').get('button').should('have.length', 1)
+    cy.get('form').get('.reserve').should('have.length', 1)
   })
   it('Should be able to add values to inputs', () => {
     cy.get('form').get('input[name="name"]')
