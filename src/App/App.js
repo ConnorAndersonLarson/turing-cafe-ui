@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getReservations } from '../apiCalls.js'
+import { getReservations, setReservation, removeReservation } from '../apiCalls.js'
 import Reservations from '../Reservations/Reservations';
 import './App.css';
 
@@ -19,7 +19,26 @@ class App extends Component {
   }
 
   makeReservation = (newRes) => {
-    this.setState({ reservations: [...this.state.reservations, newRes] });
+    setReservation(newRest)
+      .then(result => {
+        if (result.id) {
+          this.setState({ reservations: [...this.state.reservations, result], error: '' })
+        } else {
+          this.setState({ error: 'Please fill out all fields please!' })
+        }
+      })
+  }
+
+  cancelReservation = (id) => {
+    removeReservation(id)
+      .then(response => {
+        if (response.ok) {
+          const updatedReservations = this.state.reservations.filter(res => res.id !== id);
+          this.setState({ reservations: updatedReservations, error: '' });
+        } else {
+          this.setState({ error: 'It seems there was an issue deleting this reservation'});
+        }
+      })
   }
 
   render() {
@@ -30,7 +49,7 @@ class App extends Component {
           <Form makeReservation={this.makeReservation} />
         </div>
         <div className='resy-container'>
-          <Reservations reservations={this.state.reservations} />
+          <Reservations reservations={this.state.reservations} cancelReservation={this.cancelReservation}/>
         </div>
       </div>
     )

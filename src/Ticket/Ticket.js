@@ -3,12 +3,12 @@ import './Ticket.css';
 
 const Ticket = ({ id, name, date, time, guests }) => {
   return(
-    <section className="ticket" id={id}>
+    <section className="ticket">
       <p><b>{name}</b></p>
       <p>{date}</p>
       <p>{time} pm</p>
       <p>Number of Guests: {guests}</p>
-      <button>Cancel</button>
+      <button onClick={() => cancelReservation(id)}>Cancel</button>
     </section>
   )
 }

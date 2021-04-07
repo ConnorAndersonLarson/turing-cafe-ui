@@ -2,7 +2,7 @@ import React from 'react';
 import Ticket from '../Ticket/Ticket.js'
 import './Reservations.css';
 
-const Reservations = ({ reservations }) => {
+const Reservations = ({ reservations, cancelReservation }) => {
 
   const reserveTickets = reservations.map(res => {
     return (
@@ -12,7 +12,7 @@ const Reservations = ({ reservations }) => {
         date={res.date}
         time={res.time}
         guests={res.number}
-
+        cancelReservation={cancelReservation}
       />
     )
   })
