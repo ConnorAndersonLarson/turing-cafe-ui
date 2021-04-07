@@ -1,7 +1,7 @@
 import React from 'react';
 import './Ticket.css';
 
-const Ticket = ({ id, name, date, time, guests }) => {
+const Ticket = ({ id, name, date, time, guests, cancelReservation }) => {
   return(
     <section className="ticket">
       <p><b>{name}</b></p>

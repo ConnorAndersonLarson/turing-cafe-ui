@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getReservations, setReservation, removeReservation } from '../apiCalls.js'
 import Reservations from '../Reservations/Reservations';
+import Form from '../Form/Form';
 import './App.css';
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
   }
 
   makeReservation = (newRes) => {
-    setReservation(newRest)
+    setReservation(newRes)
       .then(result => {
         if (result.id) {
           this.setState({ reservations: [...this.state.reservations, result], error: '' })

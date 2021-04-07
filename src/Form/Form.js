@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Form.css';
 
-class Form extends Component;
+class Form extends Component{
   constructor() {
     super();
     this.state = {
@@ -10,6 +10,7 @@ class Form extends Component;
       time: '',
       guests: ''
     }
+  }
 
     handleChange = event => {
       this.setState({ [event.target.name]: event.target.value });
@@ -54,16 +55,20 @@ class Form extends Component;
             onChange={event => this.handleChange(event)}
           />
           <input
-            type="text"
+            type="number"
             placeholder="Number of Guests"
             name="guests"
+            min='1'
+            max='12'
             value={this.state.guests}
             onChange={event => this.handleChange(event)}
           />
 
-          <button onClick={event => this.submitReservation(event)}>Make Reservation</button>
+          <button className="reserve" onClick={event => this.submitReservation(event)}>Make Reservation</button>
         </form>
       )
     }
 
   }
+
+export default Form;

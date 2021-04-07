@@ -7,7 +7,7 @@ export const getReservations = () => {
 
 export const setReservation = (newRes) => {
   return fetch(`${baseURL}`, {
-    method: 'POST'
+    method: 'POST',
     headers: {
       "Content-Type": "application/json"
     },
