@@ -1,7 +1,11 @@
 .reservationTickets {
   margin-top: 20px;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   grid-gap: 1rem;
-  grid-template-rows: repeat(auto-fit);
+  grid-template-rows: repeat(auto-fit); */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
 }

@@ -41,10 +41,8 @@ describe('Main-Page Testing', () => {
       .get('form').get('input[name="time"]')
       .type('12:20')
       .should('have.value', '12:20')
-      .get('form').get('input[name="guests"]')
+      .get('form').get('input[name="number"]')
       .type('4')
       .should('have.value', '4')
   })
-
-
 })
