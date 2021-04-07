@@ -5,10 +5,17 @@ export const getReservations = () => {
     .then(response => response.json())
 }
 
-export const setReservation = () => {
-
+export const setReservation = (newRes) => {
+  return fetch(`${baseURL}`, {
+    method: 'POST'
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newRes)
+  })
+    .then(response => response.json())
 }
 
-export const removeReservation = () => {
-  
+export const removeReservation = (id) => {
+  return fetch(`${baseURL}/${id}`, {method: 'DELETE'})
 }
