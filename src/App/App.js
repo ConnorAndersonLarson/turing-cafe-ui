@@ -22,6 +22,7 @@ class App extends Component {
   makeReservation = (newRes) => {
     setReservation(newRes)
       .then(result => {
+          console.log(result)
         if (result.id) {
           this.setState({ reservations: [...this.state.reservations, result], error: '' })
         } else {

@@ -8,7 +8,7 @@ class Form extends Component{
       name: '',
       date: '',
       time: '',
-      guests: ''
+      number: ''
     }
   }
 
@@ -27,7 +27,7 @@ class Form extends Component{
     }
 
     clearInputs = () => {
-      this.setState({ name: '', date: '', time: '', guests: ''})
+      this.setState({ name: '', date: '', time: '', number: ''})
     }
 
     render() {
@@ -55,12 +55,13 @@ class Form extends Component{
             onChange={event => this.handleChange(event)}
           />
           <input
+            id = "123"
             type="number"
-            placeholder="Number of Guests"
-            name="guests"
-            min='1'
-            max='12'
-            value={this.state.guests}
+            name="number"
+            placeholder="Total Guests"
+            min="1"
+            max="12"
+            value={this.state.number}
             onChange={event => this.handleChange(event)}
           />
 
