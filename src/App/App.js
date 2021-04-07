@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getReservations } from './apiCalls.js'
+import { getReservations } from '../apiCalls.js'
 import Reservations from '../Reservations/Reservations';
 import './App.css';
 
@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      reservations: []
+      reservations: [],
       error: ''
     }
   }

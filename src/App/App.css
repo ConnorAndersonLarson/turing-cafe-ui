@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
+button {
+  background-color: teal;
+  color: white;
+  height: 25px;
+  width: 250px;
+}
+
+button:hover {
+  background-color: #036060;
+  cursor: pointer;
+}
+
 .App {
   display: flex;
   flex-direction: column;
